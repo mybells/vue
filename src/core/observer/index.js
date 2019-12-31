@@ -107,7 +107,10 @@ function copyAugment (target: Object, src: Object, keys: Array<string>) {
  * returns the new observer if successfully observed,
  * or the existing observer if the value already has one.
  */
+//执行栈initState -> initData ->observe开始
 export function observe (value: any, asRootData: ?boolean): Observer | void {
+
+  //obj !== null && typeof obj === 'object' 不为null并且是对象或者数组
   if (!isObject(value) || value instanceof VNode) {
     return
   }
@@ -120,7 +123,8 @@ export function observe (value: any, asRootData: ?boolean): Observer | void {
     (Array.isArray(value) || isPlainObject(value)) &&
     Object.isExtensible(value) &&
     !value._isVue
-  ) {
+    ) {
+    //初次观察
     ob = new Observer(value)
   }
   if (asRootData && ob) {
@@ -154,6 +158,7 @@ export function defineReactive (
   }
 
   let childOb = !shallow && observe(val)
+  debugger;
   Object.defineProperty(obj, key, {
     enumerable: true,
     configurable: true,

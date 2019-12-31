@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>vue源码测试</title>
+  <!-- Delete ".min" for console warnings in development -->
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="el">
+  </div>
+
+  <script>
+    new Vue({
+      el: '#el',
+      data: {
+        // arr: [1,2,3],
+        obj: {a:1}
+      }
+    })
+  </script>
+</body>
+</html>
