@@ -6,7 +6,7 @@ import { FunctionalRenderContext } from 'core/vdom/create-functional-component'
 initGlobalAPI(Vue)
 
 Object.defineProperty(Vue.prototype, '$isServer', {
-  get: isServerRendering
+  get: isServerRendering//是否是服务端渲染Boolean
 })
 
 Object.defineProperty(Vue.prototype, '$ssrContext', {
